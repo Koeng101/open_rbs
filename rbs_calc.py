@@ -7,7 +7,7 @@ class RbsCalculator:
             "UUG": -0.0435, 
             "CUG":-0.03406} # Taken from https://github.com/hsalis/Ribosome-Binding-Site-Calculator-v1.0/blob/master/RBS_Calculator.py 
 
-    def dG_tot(self,mRNA:str) -> int:
+    def dG_tot(self,mRNA:str) -> float:
         # Calculate dG_mRNA_rRNA
         dG_mRNA_rRNA = 1
 
@@ -26,7 +26,7 @@ class RbsCalculator:
 
         return (dG_mRNA_rRNA + dG_start + dG_spacing - dG_standby) - dG_mRNA
 
-    def calculate_rbs(mRNA:str) -> int: # Runs additional sanity checks
+    def calculate_rbs(mRNA:str) -> float: # Runs additional sanity checks
         # Check if mRNA sequence
         mRNA = mRNA.replace('T','U')
         if re.search(mRNA, "^[AUGC]*$") is None:
