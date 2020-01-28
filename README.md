@@ -1,3 +1,4 @@
+# RBS strength calculation
 
 RBS calculation takes 5 basic parameters:
 
@@ -7,7 +8,7 @@ RBS calculation takes 5 basic parameters:
 4. dG-standby
 5. dG-mRNA
 
-
+`dG_tot = (dG-mRNA:RNA + dG-start + dG-spacing - dG-standby) - dG-mRNA`
 
 ## dG-mRNA:rRNA
 Idea: capture the energy in the basepairing between mRNA RBS and the SD sequence in the rRNA. This is energy gained by the system during ribosome assembly on the mRNA due to rRNA recognition. This captures (roughly) the "strength" of an RBS (as measured by gene expression).
@@ -31,6 +32,3 @@ Idea: capture the energy in the basepairing between the mRNA on itself. mRNA fol
 
 Implementation: Use NuPACK to calculate energy of mRNA binding to itself.
 
-
-# Formula for calculating RBS strength
-`dG_tot = (dG-mRNA:RNA + dG-start + dG-spacing - dG-standby) - dG-mRNA`
