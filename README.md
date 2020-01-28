@@ -26,7 +26,9 @@ Idea: capture the energy that is necessary to overcome non-optimal spacing betwe
 Implementation: Calculate where the rRNA binds to the mRNA, then use a premade table from Howard Salis's work to turn spacing into dG.
 
 ## dG-standby
-Idea: capture the energy lost by unfolding the mRNA sequence upstream of the SD sequence, which the authors call the "standby sequence" and is located 4 bp upstream of the SD. The folding of the standby sequence inhibits the ribosome from physically accessing the SD region on the mRNA, and thus the strength of folding in the standby sequence negatively effects expression.
+Idea: capture the energy lost by unfolding the mRNA sequence upstream of the SD sequence, which the authors call the "standby sequence" and is located 4 bp upstream of the SD. The authors implicitly model ribosome-mRNA binding in two steps: first the 16S subunit binds the SD sequence, then the 30S subunit unwinds standby sequence to bind the 16S-mRNA complex to complete the reaction. The folding of the standby sequence inhibits the ribosome from physically accessing the SD region on the mRNA, and thus the strength of folding in the standby sequence negatively effects expression.
+
+Implementation: unclear, need to analyze OG code
 
 ## dG-mRNA
 Idea: capture the energy in the basepairing between the mRNA on itself. mRNA folding on itself competes with rRNA binding to it, and will lower translation rates.
